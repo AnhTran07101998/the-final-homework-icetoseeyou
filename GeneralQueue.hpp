@@ -35,7 +35,7 @@ class Queue {
 			}
 			else {
 				int q_size =q.size();
-				_data *q_values_copy = new Data [q_size];
+				_data *q_values_copy = new _data [q_size];
 				int i;
 				for(i=0;i<q_size;i++) {
 				
