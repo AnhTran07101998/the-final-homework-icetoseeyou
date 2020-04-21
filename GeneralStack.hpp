@@ -43,7 +43,7 @@ class Stack {
 						*(_values + i) = *(s_values_copy + i);
 					}
 				}
-				3
+				
 					_size = s_size;
 				delete [] s_values_copy;
 			}
@@ -128,12 +128,12 @@ class Stack {
 					return true;
 				}	
 			}
-		}
-	return false;
 		
+	return false;
+		}
 		
 			//	return _data.search(value);
-		}
+		
 
 
 		bool empty() const {
