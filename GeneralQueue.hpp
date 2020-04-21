@@ -3,10 +3,10 @@
 //	GeneralStack.hpp already includes it
 /*#include "GeneralList.hpp"*/
 
-template <class Q>
+template <class iceToSeeQ>
 class Queue {
 	private:
-		List<Q> _data;
+		List<iceToSeeQ> _data;
 		size_t _size;
 	public:
 		//Default constructor
@@ -17,12 +17,12 @@ class Queue {
 		
 		}
 
-		Queue (Data value) {
+	/*	Queue (Data <iceToSeeQ> icyQ) {
 		
 			_size = 1;
 			_values = new Data(value);
 		
-		}
+		} */
 
 		//Copy constructor
 		Queue(const Queue &q){
@@ -93,20 +93,20 @@ class Queue {
 			return_size;
 		}
 
-		Q front() const{
+		iceToSeeQ front() const{
 		
 		
 			return *_values;
 		}
 
-		Q back() const{
+		iceToSeeQ back() const{
 		
 		
 			return *_values;
 		}
 
 		//Push to queue
-		void enqueue(Q value) {
+		void enqueue(iceToSeeQ value) {
 		
 		
 		
@@ -177,7 +177,7 @@ class Queue {
 			std::cout << std::endl;
 		}
 
-		bool search(Q value) {
+		bool search(iceToSeeQ value) {
 		
 		
 			for(int i=0; i<size();i++){
@@ -199,7 +199,7 @@ class Queue {
 			return (_values == nullptr) && (_size==0);
 		}
 
-		Queue<Q> operator=(const Queue<Q> q) {
+		Queue<iceToSeeQ> operator=(const Queue<iceToSeeQ> q) {
 		
 			
 			if(q.size() ==0) {
@@ -209,7 +209,7 @@ class Queue {
 			if(q.size() ==1) {
 			
 			
-				Q values_copy = *q._values;
+				iceToSeeQ values_copy = *q._values;
 				if(size() <2){
 				
 					delete _values;
@@ -224,7 +224,7 @@ class Queue {
 			else{
 		
 				int values_size = q.size();
-				Q *(values_copy = new Data[values_size];
+				iceToSeeQ *(values_copy = new Data[values_size];
 				for (int i = 0;i<values_size;i++){
 				
 					*(values_copy+i) = *(q._values+i);
