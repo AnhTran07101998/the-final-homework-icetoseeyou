@@ -255,9 +255,6 @@ class Queue {
 		
 		
 		
-		
-			_data = q._data;
-			_size = _data.size();
 		}
 
 		template <class U>
