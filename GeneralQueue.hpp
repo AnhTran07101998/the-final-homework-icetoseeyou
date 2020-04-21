@@ -6,23 +6,23 @@
 template <class iceToSeeQ>
 class Queue {
 	private:
-		List<iceToSeeQ> *_data;
+		List<iceToSeeQ> *_values;
 		size_t _size;
 	public:
 		//Default constructor
 		Queue(){
 			
 			_size = 0;
-			_data =nullptr;
+			_values =nullptr;
 		
 		}
 
-	/*	Queue (Data <iceToSeeQ> icyQ) {
+		Queue (iceToSeeQ icyQ) {
 		
 			_size = 1;
-			_values = new Data(value);
+			_values = new iceToSeeQ(icyQ);
 		
-		} */
+		} 
 
 		//Copy constructor
 		Queue(const Queue &q){
@@ -30,12 +30,12 @@ class Queue {
 			if(q.size() == 0) {
 			
 				_size = 0;
-				_data =nullptr;
+				_values =nullptr;
 			
 			}
 			else {
 				int q_size =q.size();
-				_data *q_values_copy = new _data [q_size];
+				iceToSeeQ *q_values_copy = new iceToSeeQ [q_size];
 				int i;
 				for(i=0;i<q_size;i++) {
 				
@@ -45,14 +45,14 @@ class Queue {
 
 			if (q_size==1) {
 			
-				_values = new _data (*q_values_copy);
+				_values = new iceToSeeQ (*q_values_copy);
 			
 			}
 
 			else {
 			
 			
-				_values = new _data[q_size];
+				_values = new iceToSeeQ[q_size];
 				for(i=0 ; i<q_size; i++) {
 				
 				
@@ -112,14 +112,14 @@ class Queue {
 		
 			if (_values == nullptr) {
 			
-				_values = new Data (value);
+				_values = new iceToSeeQ (value);
 				_size++;
 			}
 			else {
 			
 			
 				int data_size=size();
-				Data *data_copy = new Data [data_size];
+				iceToSeeQ *data_copy = new iceToSeeQ [data_size];
 				int i;
 				for (i=0;i<data_size;i++){
 				
@@ -127,7 +127,7 @@ class Queue {
 				}
 				
 				delete [] _values;
-				_values =  new Data[data_size+1];
+				_values =  new iceToSeeQ[data_size+1];
 
 				*(_values)= value;
 
@@ -155,13 +155,13 @@ class Queue {
 			}
 			else {
 				int data_size = size();
-				Data *data_copy = new Data[data_size-1];
+				iceToSeeQ *data_copy = new iceToSeeQ[data_size-1];
 				int i;
 				for(i=0; i<data_size-1; i++) {
 					*(data_copy+i) = *(_values+i);
 				}
 				delete [] _values;
-				_values = new Data[data_size-1];
+				_values = new iceToSeeQ[data_size-1];
 				for(i=0; i<data_size-1; i++) {
 					*(_values+i) = *(data_copy+i);
 				}
