@@ -6,14 +6,14 @@
 template <class iceToSeeQ>
 class Queue {
 	private:
-		List<iceToSeeQ> _data;
+		List<iceToSeeQ> *_data;
 		size_t _size;
 	public:
 		//Default constructor
 		Queue(){
 			
 			_size = 0;
-			Data *_values=nullptr;
+			_data =nullptr;
 		
 		}
 
