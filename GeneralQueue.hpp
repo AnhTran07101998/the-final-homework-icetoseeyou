@@ -30,12 +30,12 @@ class Queue {
 			if(q.size() == 0) {
 			
 				_size = 0;
-				Data *_values=nullptr;
+				_data =nullptr;
 			
 			}
 			else {
 				int q_size =q.size();
-				Data *q_values_copy = new Data [q_size];
+				_data *q_values_copy = new Data [q_size];
 				int i;
 				for(i=0;i<q_size;i++) {
 				
@@ -45,14 +45,14 @@ class Queue {
 
 			if (q_size==1) {
 			
-				_values = new Data (*q_values_copy);
+				_values = new _data (*q_values_copy);
 			
 			}
 
 			else {
 			
 			
-				_values = new Data[q_size];
+				_values = new _data[q_size];
 				for(i=0 ; i<q_size; i++) {
 				
 				
