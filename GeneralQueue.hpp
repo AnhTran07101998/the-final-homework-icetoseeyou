@@ -90,7 +90,7 @@ class Queue {
 		size_t size() const{
 		
 		
-			return_size;
+			return size;
 		}
 
 		iceToSeeQ front() const{
@@ -218,13 +218,13 @@ class Queue {
 				
 					delete[] _values;
 				}
-				_values = new Data(values_copy);
+				_values = new iceToSeeQ(values_copy);
 				_size = 1;
 			}
 			else{
 		
 				int values_size = q.size();
-				iceToSeeQ *(values_copy = new Data[values_size];
+				iceToSeeQ *values_copy = new iceToSeeQ[values_size];
 				for (int i = 0;i<values_size;i++){
 				
 					*(values_copy+i) = *(q._values+i);
@@ -234,14 +234,14 @@ class Queue {
 
 				if (size()<2) {
 				
-					delete _values
+					delete _values;
 				}
 				else {
 				
 					delete[] _values;
 				}
 
-				_values = new Data [values_size];
+				_values = new iceToSeeQ [values_size];
 
 				for(int i=0; i<values_size; i++) {
 					*(_values+i) = *(values_copy+i);
