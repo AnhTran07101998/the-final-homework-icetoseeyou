@@ -250,7 +250,7 @@ class Queue {
 				delete [] values_copy;
 			}
 			return *this;
-			}
+			
 		
 		
 		
