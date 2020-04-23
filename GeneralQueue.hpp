@@ -7,7 +7,7 @@ template <class iceToSeeQ>
 class Queue {
 	private:
 		//You do not need a pointer to a list, you need a list
-		List<iceToSeeQ> _values;
+		iceToSeeQ  *_values;
 		size_t _size;
 	public:
 		//Default constructor
@@ -16,7 +16,7 @@ class Queue {
 			_size = 0;
 			//List<iceToSeeQ> has its own constructor, you do not need to
 			// initialize it with a value
-			_values = new iceToSeeQ(value);
+			_values = nullptr;
 		
 		}
 
@@ -93,7 +93,7 @@ class Queue {
 		size_t size() const{
 		
 		
-			return size;
+			return _size;
 		}
 
 		iceToSeeQ front() const{
