@@ -4,8 +4,9 @@
 template <class Data>
 class Stack {
 	private:
-		size_t _size;
+		
 		List<Data> _values;
+		size_t _size;
 		
 	public:
 		//Default constructor
@@ -17,9 +18,9 @@ class Stack {
 		
 
 		//Default copy constructor
-		Stack(const Stack &s) {
+		Stack(const Stack<Data> &s) {
 			
-			_values = s.values;
+			_values = s._values;
 			_size = _values.size();
 			
 		}
@@ -37,26 +38,7 @@ class Stack {
 
 		//Adding data to the data structure
 		void push(Data value) {
-			if(_values == nullptr) {
-				_values = new Data(value);
-				_size++;
-			}
-			else {
-				int data_size = size();
-				Data *data_copy = new Data[data_size];
-				int i;
-				for(i=0; i<data_size; i++) {
-					*(data_copy+i) = *(_values+i);
-				}
-				delete [] _values;
-				_values = new Data[data_size+1];
-				for(i=0; i<data_size; i++) {
-					*(_values+i) = *(data_copy+i);
-				}
-				*(_values+i) = value;
-				_size++;
-				delete [] data_copy;
-			}
+			
 		}
 
 		//Removing data from the data structure
@@ -88,22 +70,17 @@ class Stack {
 		}
 
 		bool search(Data value) {
-			for(int i=0; i<size(); i++) {
-				if(*(_values+i) == value) {
-					return true;
-				}	
-			}
 		
-	return false;
+		
+			return _values.search(value);
+			
+
 		}
-		
-			//	return _data.search(value);
 		
 
 
-		bool empty() const {
-			return (_values == nullptr) && (_size == 0);
-		}
+		bool empty() const; 
+		
 
 		void print()  {
 			for(int i=0; i<size(); i++) {
@@ -159,7 +136,7 @@ class Stack {
 		friend bool operator!=(const Stack<S> &left_side, const Stack<S> &right_side);
 
 };
-
+/*
 template <class S> std::ostream &operator<<(std::ostream &out, const Stack<S> &stack) {
 	for(int i=0; i<stack.size(); i++) {
 		out << *(stack._values+i) << " ";
@@ -180,3 +157,5 @@ template <class S> bool operator==(const Stack<S> &left_side, const Stack<S> &ri
 template <class S> bool operator!=(const Stack<S> &left_side, const Stack<S> &right_side) {
 	return !(left_side==right_side);
 }
+
+*/
