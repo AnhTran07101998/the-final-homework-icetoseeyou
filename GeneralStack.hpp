@@ -5,64 +5,29 @@ template <class Data>
 class Stack {
 	private:
 		size_t _size;
-		Data *_values;
+		List<Data> _values;
 		
 	public:
 		//Default constructor
 		Stack(){
 		
 			_size=0;
-			_values = nullptr;
 		}
-		Stack(Data value) {
 		
 		
-			_size=1;
-			_values = new Data(value);
-		}
 
 		//Default copy constructor
 		Stack(const Stack &s) {
-			if(s.size() == 0) {
-				_size = 0;
-				_values = nullptr;
-			}
-			else {
-				int s_size = s.size();
-				Data *s_values_copy = new Data[s_size];
-				int i;
-				for(i=0; i<s_size; i++) {
-					*(s_values_copy + i) = *(s._values + i);
-				}
-				if(s_size == 1) {
-					_values = new Data(*s_values_copy);
-				}
-				else {
-					_values = new Data[s_size];
-					for(i=0; i<s_size; i++) {
-						*(_values + i) = *(s_values_copy + i);
-					}
-				}
-				
-					_size = s_size;
-				delete [] s_values_copy;
-			}
+			
+			_values = s.values;
+			_size = _values.size();
+			
 		}
 
-		~Stack(){
-			
-			if(size() < 2) {
-				delete _values;
-			}
-			else {
-				delete [] _values;
-			}
-			
-		}
 		//Getters
 		Data top() const {
 		
-			return *(_values + size() -1);
+			return _values.front;
 		}
 
 		size_t size() const {
