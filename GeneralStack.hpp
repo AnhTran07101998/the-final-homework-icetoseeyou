@@ -27,7 +27,7 @@ class Stack {
 		//Getters
 		Data top() const {
 		
-			return _values.front;
+			return _values.front();
 		}
 
 		size_t size() const {
