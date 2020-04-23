@@ -58,7 +58,7 @@ class Queue {
 				//
 		//	value.List<D>.push_back();
 		
-			value.List<Data>.reccopy();	
+			value.List<iceToSeeQ>.reccopy();	
 		
 		
 		}
