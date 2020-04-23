@@ -39,7 +39,7 @@ class Stack {
 		//Adding data to the data structure
 		void push(Data value) {
 			
-			value.push_front();	
+			Dlist.value.push_front();	
 		}
 
 		//Removing data from the data structure
