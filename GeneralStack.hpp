@@ -28,7 +28,7 @@ class Stack {
 		//Getters
 		Data top() const {
 		
-			return _values.front();
+			return _values.back();
 		}
 
 		size_t size() const {
@@ -39,6 +39,7 @@ class Stack {
 		//Adding data to the data structure
 		void push(Data value) {
 			
+			value.push_front();	
 		}
 
 		//Removing data from the data structure
