@@ -14,9 +14,6 @@ class Queue {
 		Queue(){
 			
 			_size = 0;
-			//List<iceToSeeQ> has its own constructor, you do not need to
-			// initialize it with a value a value
-			_values = nullptr;
 		
 		}
 		//Copy constructor
