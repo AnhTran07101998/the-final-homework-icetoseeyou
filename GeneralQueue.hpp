@@ -63,38 +63,18 @@ class Queue {
 		}
 
 		//Pop from queue
-		void dequeue(){
-			if(_values == nullptr) {
-				std::cout << "Could not pop empty Queue" << std::endl;
-				return;
-			}
-			else if(size() == 1) {
-				delete _values;
-				_values = nullptr;
-				_size = 0;
-			}
-			else {
-				int data_size = size();
-				iceToSeeQ *data_copy = new iceToSeeQ[data_size-1];
-				int i;
-				for(i=0; i<data_size-1; i++) {
-					*(data_copy+i) = *(_values+i);
-				}
-				delete [] _values;
-				_values = new iceToSeeQ[data_size-1];
-				for(i=0; i<data_size-1; i++) {
-					*(_values+i) = *(data_copy+i);
-				}
-				delete [] data_copy;
-				_size--;
-			}
+		void dequeue(iceToSeeQ value){
+	
+
+			value.pop_back();
+	
+	
 		}
 
 		void print(){
-			for(int i=0; i<size(); i++) {
-				std::cout << *(_values+i) << " ";
-			}
-			std::cout << std::endl;
+		
+			
+
 		}
 
 		bool search(iceToSeeQ value) {
