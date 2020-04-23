@@ -74,7 +74,9 @@ class Stack {
 		//This overloaded operator is empty, please implement
 		Stack<Data> operator=(const Stack<Data> &s) {
 		
-			
+			_value = s._value(); 
+			_size  = _values.size();
+
 
 		}
 		
