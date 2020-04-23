@@ -39,35 +39,13 @@ class Stack {
 		//Adding data to the data structure
 		void push(Data value) {
 			
-			value.push_front();	
+			value.push_back();	
 		}
 
 		//Removing data from the data structure
 		void pop() {
-			if(_values == nullptr) {
-				std::cout << "Could not pop empty Stack" << std::endl;
-				return;
-			}
-			else if(size() == 1) {
-				delete _values;
-				_values = nullptr;
-				_size = 0;
-			}
-			else {
-				int data_size = size();
-				Data *data_copy = new Data[data_size-1];
-				int i;
-				for(i=0; i<data_size-1; i++) {
-					*(data_copy+i) = *(_values+i);
-				}
-				delete [] _values;
-				_values = new Data[data_size-1];
-				for(i=0; i<data_size-1; i++) {
-					*(_values+i) = *(data_copy+i);
-				}
-				delete [] data_copy;
-				_size--;
-			}
+		
+			top().pop_front();
 		}
 
 		bool search(Data value) {
@@ -80,7 +58,10 @@ class Stack {
 		
 
 
-		bool empty() const; 
+		bool empty() const{
+			
+			return(_values == nullptr) &&(_size ==0); 	
+		} 
 		
 
 		void print()  {
