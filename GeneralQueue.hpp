@@ -19,14 +19,6 @@ class Queue {
 			_values = nullptr;
 		
 		}
-
-		Queue (iceToSeeQ icyQ) {
-		
-			_size = 1;
-			_values = new iceToSeeQ(icyQ);
-		
-		} 
-
 		//Copy constructor
 		Queue(const Queue &q){
 
