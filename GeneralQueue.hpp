@@ -17,7 +17,10 @@ class Queue {
 		
 		}
 		//Copy constructor
-		Queue(const Queue &q){
+		Queue(const Queue<iceToSeeQ> &q) { 
+
+			_values = q._values;
+			_size = _values.size();
 
 		}
 
@@ -33,50 +36,22 @@ class Queue {
 		iceToSeeQ front() const{
 		
 		
-			return *_values;
+			return _values;
 		}
 
 		iceToSeeQ back() const{
 		
 		
-			return *_values;
+			return _values.back();
 		}
 
 		//Push to queue
-		void enqueue(iceToSeeQ value) {
+		void List<Queue>::enqueue(iceToSeeQ value) {
+		
+	        	value.push_front();
 		
 		
 		
-			if (_values == nullptr) {
-			
-				_values = new iceToSeeQ (value);
-				_size++;
-			}
-			else {
-			
-			
-				int data_size=size();
-				iceToSeeQ *data_copy = new iceToSeeQ [data_size];
-				int i;
-				for (i=0;i<data_size;i++){
-				
-					*(data_copy+i)= *(_values);
-				}
-				
-				delete [] _values;
-				_values =  new iceToSeeQ[data_size+1];
-
-				*(_values)= value;
-
-				for(i=0;i<data_size;i++) {
-				
-				
-					*(_values+i+1) = *(data_copy+i);
-				}
-
-				_size++;
-				delete [] data_copy;
-			}
 		}
 
 		//Pop from queue
