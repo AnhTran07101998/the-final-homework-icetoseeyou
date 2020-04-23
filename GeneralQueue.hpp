@@ -36,7 +36,7 @@ class Queue {
 		
 		
 			//This should look similar to the back() method
-			return _values;
+			return _values.front;
 		}
 
 		iceToSeeQ back() const{
@@ -46,16 +46,17 @@ class Queue {
 			return _values.back();
 		}
 
-		//Push to queue
-		//TODO: You do not need the 'List<Queue>::' part
-		void List<Queue>::enqueue(iceToSeeQ value) {
+		void enqueue(iceToSeeQ value) {
 		
 				//TODO close, but no cigar.
 				// values is a iceToSeeQ datatype, it probably does not have
 				// a 'push_front()' method, however, I think the List
 				// class does (spoiler: it does), and it is in your private
 				// section of your class.
-	        	value.push_front();
+				// Are you referring to the List<iceToSeeQ>_ values or the 
+				// reccopy funciton in the private of the list class?
+				//
+			List<iceToSeeQ> values.push_front();
 		
 		
 		
