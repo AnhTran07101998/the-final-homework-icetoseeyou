@@ -63,10 +63,10 @@ class Queue {
 		}
 
 		//Pop from queue
-		void dequeue(iceToSeeQ value){
+		void dequeue(){
 	
 
-			value.pop_back();
+			front().pop_front();
 	
 	
 		}
