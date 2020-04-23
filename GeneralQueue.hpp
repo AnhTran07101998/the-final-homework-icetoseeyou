@@ -7,7 +7,7 @@ template <class iceToSeeQ>
 class Queue {
 	private:
 		//You do not need a pointer to a list, you need a list
-		iceToSeeQ  *_values;
+		iceToSeeQ  _values;
 		size_t _size;
 	public:
 		//Default constructor
