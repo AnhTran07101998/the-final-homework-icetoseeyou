@@ -19,61 +19,6 @@ class Queue {
 		//Copy constructor
 		Queue(const Queue &q){
 
-			if(q.size() == 0) {
-			
-				_size = 0;
-				_values =nullptr;
-			
-			}
-			else {
-				int q_size =q.size();
-				iceToSeeQ *q_values_copy = new iceToSeeQ [q_size];
-				int i;
-				for(i=0;i<q_size;i++) {
-				
-					*(q_values_copy+1) = *(q._values+i);
-
-				}
-
-			if (q_size==1) {
-			
-				_values = new iceToSeeQ (*q_values_copy);
-			
-			}
-
-			else {
-			
-			
-				_values = new iceToSeeQ[q_size];
-				for(i=0 ; i<q_size; i++) {
-				
-				
-					*(_values + i ) = *(q_values_copy +i);
-				}
-			}
-
-			_size = q_size;
-			delete [] q_values_copy;
-			
-			}
-		
-	
-		}
-
-		~Queue() {
-		
-		
-		
-			if(size()<2){
-			
-				delete _values;
-
-			}
-			else {
-			
-				delete [] _values;
-
-			}
 		}
 
 
