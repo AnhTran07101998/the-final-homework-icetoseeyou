@@ -39,7 +39,7 @@ class Stack {
 		//Adding data to the data structure
 		void push(Data value) {
 			
-			value.push_back();	
+			value.push_front();	
 		}
 
 		//Removing data from the data structure
@@ -60,7 +60,7 @@ class Stack {
 
 		bool empty() const{
 			
-			return(_values == nullptr) &&(_size ==0); 	
+		//	return(_values.empty()) &&(_size ==0); 	
 		} 
 		
 
@@ -74,7 +74,7 @@ class Stack {
 		//This overloaded operator is empty, please implement
 		Stack<Data> operator=(const Stack<Data> &s) {
 		
-			_value = s._value(); 
+			_values = s._value(); 
 			_size  = _values.size();
 
 
