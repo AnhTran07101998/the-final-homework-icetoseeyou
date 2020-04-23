@@ -36,7 +36,7 @@ class Queue {
 		
 		
 			//This should look similar to the back() method
-			return _values.front;
+			return _values.front();
 		}
 
 		iceToSeeQ back() const{
