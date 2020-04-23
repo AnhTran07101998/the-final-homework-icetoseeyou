@@ -73,40 +73,9 @@ class Stack {
 
 		//This overloaded operator is empty, please implement
 		Stack<Data> operator=(const Stack<Data> &s) {
-			if(s.size() == 0) {
-				return *this;
-			}
-			if(s.size() == 1) {
-				Data values_copy = *s._values;
-				if(size() < 2) {
-					delete _values;
-				}
-				else {
-					delete [] _values;
-				}
-				_values = new Data(values_copy);
-				_size = 1;
-			}
-			else {
-				int values_size = s.size();
-				Data *values_copy = new Data[values_size];
-				for(int i=0; i<values_size; i++) {
-					*(values_copy+i) = *(s._values+i);
-				}
-				if(size() < 2) {
-					delete _values;
-				}
-				else {
-					delete [] _values;
-				}
-				_values = new Data[values_size];
-				for(int i=0; i<values_size; i++) {
-					*(_values+i) = *(values_copy+i);
-				}
-				_size = values_size;
-				delete [] values_copy;
-			}
-			return *this;
+		
+			
+
 		}
 		
 
@@ -118,26 +87,3 @@ class Stack {
 		friend bool operator!=(const Stack<S> &left_side, const Stack<S> &right_side);
 
 };
-/*
-template <class S> std::ostream &operator<<(std::ostream &out, const Stack<S> &stack) {
-	for(int i=0; i<stack.size(); i++) {
-		out << *(stack._values+i) << " ";
-	}
-	return out;
-}
-template <class S> bool operator==(const Stack<S> &left_side, const Stack<S> &right_side) {
-	if(left_side.size() != right_side.size()) {
-		return false;
-	}
-	for(int i=0; i<left_side.size(); i++) {
-		if(*(left_side._values+i) != *(right_side._values+i)) {
-			return false;
-		}
-	}
-	return true;
-}
-template <class S> bool operator!=(const Stack<S> &left_side, const Stack<S> &right_side) {
-	return !(left_side==right_side);
-}
-
-*/
