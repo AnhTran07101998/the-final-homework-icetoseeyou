@@ -6,8 +6,7 @@
 template <class iceToSeeQ>
 class Queue {
 	private:
-		//You do not need a pointer to a list, you need a list
-		List<iceToSeeQ>  _values;
+		List<iceToSeeQ> _values;
 		size_t _size;
 	public:
 		//Default constructor
@@ -36,18 +35,26 @@ class Queue {
 		iceToSeeQ front() const{
 		
 		
+			//This should look similar to the back() method
 			return _values;
 		}
 
 		iceToSeeQ back() const{
 		
 		
+			//Correct!
 			return _values.back();
 		}
 
 		//Push to queue
+		//TODO: You do not need the 'List<Queue>::' part
 		void List<Queue>::enqueue(iceToSeeQ value) {
 		
+				//TODO close, but no cigar.
+				// values is a iceToSeeQ datatype, it probably does not have
+				// a 'push_front()' method, however, I think the List
+				// class does (spoiler: it does), and it is in your private
+				// section of your class.
 	        	value.push_front();
 		
 		
