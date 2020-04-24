@@ -171,7 +171,7 @@ class List {
 			_front=NULL;
 			_back=NULL;
 
-			return *this;
+			return this;
 			
 			 std::cout<<"Hello dawg";
 		}
