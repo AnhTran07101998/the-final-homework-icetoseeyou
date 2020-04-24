@@ -39,8 +39,10 @@ class Stack {
 		//Adding data to the data structure
 		void push(Data value) {
 			
-				 
-		   _values.push_front(Stack<Data> *value);	
+		//	List<Data> temp =  value; 
+				
+		      Data push_front(value);
+
 
 		}
 
