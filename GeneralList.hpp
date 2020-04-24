@@ -183,12 +183,15 @@ class List {
 
  	template<class D> friend bool operator!=(const List<D> &a, const List <D> &b); 
 
-		};
+		
 
 
-	template <class V>
+	template <class D>
 
 	friend std::ostream &operator<<(std::ostream &os, const List<V> &list);
+
+
+		};
 
  	template<class D> bool operator==(const List<D> &a, const List <D> &b){
 		
@@ -212,7 +215,7 @@ class List {
 	}
 
 		
-	template <class V>
+	template <class D>
 
 		std::ostream &operator<<(std::ostream &os, const List<V> &list) {
 
