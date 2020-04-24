@@ -57,6 +57,8 @@ class Queue {
 				// reccopy funciton in the private of the list class?
 				//
 		//	value.List<D>.push_back();
+
+			//TODO part 2: I am talking about _values.
 		
 			value.push_back();	
 		
