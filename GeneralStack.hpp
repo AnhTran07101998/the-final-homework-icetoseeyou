@@ -18,9 +18,10 @@ class Stack {
 		
 
 		//Default copy constructor
+		//TODO: You do not need the <Data>
 		Stack(const Stack<Data> &s) {
 			
-		        _values = s._values;
+	        _values = s._values;
 			_size = _values.size();
 			
 		}
@@ -48,19 +49,25 @@ class Stack {
 	//	List<Data>::List<Data>._values.push_front(value);
 
 
-		_values.List<Data>::push_front(value);
+			//TODO: Guys you are overthing this.
+			//_values.List<Data>::push_front(value);
+			_values.push_front(value);
 
 		}
 
 		//Removing data from the data structure
 		void pop() {
 		
-			top().pop_front();
+			//TODO: Again same thing
+			//top().pop_front();
+			_values.pop_front();
 		}
 
 		bool search(Data value) {
 		
 		
+			//YES this is the methodology you need to use for the
+			// stack and queue classes! JUST CALL METHODS FROM _VALUES
 			return _values.search(value);
 			
 
