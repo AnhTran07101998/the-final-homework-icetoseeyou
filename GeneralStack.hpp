@@ -39,7 +39,7 @@ class Stack {
 		//Adding data to the data structure
 		void push(Data value) {
 			
-			Dlist.value.push_front();	
+			value.List<Data>.reccopy();	
 		}
 
 		//Removing data from the data structure

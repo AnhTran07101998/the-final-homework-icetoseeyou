@@ -56,8 +56,9 @@ class Queue {
 				// Are you referring to the List<iceToSeeQ>_ values or the 
 				// reccopy funciton in the private of the list class?
 				//
-			value.push_back();
+		//	value.List<D>.push_back();
 		
+			value.List<iceToSeeQ>.reccopy();	
 		
 		
 		}
