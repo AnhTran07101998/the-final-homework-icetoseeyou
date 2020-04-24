@@ -176,6 +176,8 @@ class List {
 		}
 
 
+
+
  	template<class D> friend bool operator==(const List<D> &a, const List <D> &b);  
 
 
@@ -184,7 +186,9 @@ class List {
 		};
 
 
+	template <class V>
 
+	friend std::ostream &operator<<(std::ostream &os, const List<V> &list);
 
  	template<class D> bool operator==(const List<D> &a, const List <D> &b){
 		
@@ -208,4 +212,16 @@ class List {
 	}
 
 		
-	
+	template <class V>
+
+		std::ostream &operator<<(std::ostream &os, const List<V> &list) {
+
+			    for(auto *iter = list._front; iter != nullptr; iter = iter->next) {
+
+				            os << iter->value << " ";
+
+					        }
+
+			        return os;
+
+		}
