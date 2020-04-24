@@ -160,8 +160,7 @@ class List {
 			
 		}
 		
-		// TODO: Do not return a reference
-		List &operator=(List &x) {
+	        	List &operator=(List &x) {
 		
 		
 		 	 do {
