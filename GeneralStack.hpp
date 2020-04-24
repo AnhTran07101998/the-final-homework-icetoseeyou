@@ -40,7 +40,7 @@ class Stack {
 		void push(Data value) {
 			
 				 
-		   _values.push_front(Stack<Data> *value);	
+		  Data push_front(value);	
 
 		}
 
