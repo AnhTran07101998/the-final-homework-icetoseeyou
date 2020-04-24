@@ -19,17 +19,17 @@ class Stack {
 
 		//Default copy constructor
 		//TODO: You do not need the <Data>
-		Stack(const Stack<Data> &s) {
+		Stack(const Stack &s) {
 			
 	        _values = s._values;
-			_size = _values.size();
+		_size = _values.size();
 			
 		}
 
 		//Getters
 		Data top() const {
 		
-			return _values.back();
+			return _values.front();
 		}
 
 		size_t size() const {
@@ -53,6 +53,7 @@ class Stack {
 			//_values.List<Data>::push_front(value);
 			_values.push_front(value);
 
+			_size = _values.size();
 		}
 
 		//Removing data from the data structure
@@ -61,6 +62,8 @@ class Stack {
 			//TODO: Again same thing
 			//top().pop_front();
 			_values.pop_front();
+			
+			_size = _values.size();
 		}
 
 		bool search(Data value) {
@@ -77,15 +80,13 @@ class Stack {
 
 		bool empty() const{
 			
-		//	return(_values.empty()) &&(_size ==0); 	
+			return(_values.empty()) &&(_size ==0); 	
 		} 
 		
 
 		void print()  {
-			for(int i=0; i<size(); i++) {
-				std::cout << *(_values+i) << " ";
-			}
-			std::cout << std::endl;
+		
+			_values.print();
 		}
 
 		//This overloaded operator is empty, please implement
@@ -93,6 +94,8 @@ class Stack {
 		
 			_values = s._value(); 
 			_size  = _values.size();
+			
+	
 
 
 		}
