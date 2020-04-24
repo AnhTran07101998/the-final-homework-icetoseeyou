@@ -39,7 +39,9 @@ class Stack {
 		//Adding data to the data structure
 		void push(Data value) {
 			
-			 List<Data>::value.push_front();	
+				 
+		   _values.push_front(Stack<Data> *value);	
+
 		}
 
 		//Removing data from the data structure
