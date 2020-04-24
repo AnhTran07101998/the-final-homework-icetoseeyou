@@ -20,7 +20,7 @@ class Stack {
 		//Default copy constructor
 		Stack(const Stack<Data> &s) {
 			
-			_values = s._values;
+		        _values = s._values;
 			_size = _values.size();
 			
 		}
@@ -37,12 +37,16 @@ class Stack {
 		}
 
 		//Adding data to the data structure
+	
 		void push(Data value) {
 	//, this part here below 		
 				 
 		//	List<Data> temp =  value; 
 				
 		 // List<Data>::push_front(value);
+
+	//	List<Data>::List<Data>._values.push_front(value);
+
 
 		_values.List<Data>::push_front(value);
 
