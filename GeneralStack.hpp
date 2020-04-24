@@ -44,7 +44,7 @@ class Stack {
 				
 		 // List<Data>::push_front(value);
 
-		List<Data>::Data.push_front(value);
+		_values.List<Data>::push_front(value);
 
 		}
 
