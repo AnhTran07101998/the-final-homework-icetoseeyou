@@ -42,8 +42,9 @@ class Stack {
 				 
 		//	List<Data> temp =  value; 
 				
-		      Data push_front(value);
+		 // List<Data>::push_front(value);
 
+		List<Data>::Data.push_front(value);
 
 		}
 
