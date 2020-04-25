@@ -96,8 +96,8 @@ class Queue {
 
 		Queue<iceToSeeQ> operator=(const Queue<iceToSeeQ> q) {
 					
-				_values = s.front();
-				_size = values_size;
+				_values = q.front();
+				_size = _values.size();
 		}	
 			
 		
