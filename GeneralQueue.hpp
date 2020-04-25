@@ -82,9 +82,45 @@ class Queue {
 
 		Queue<iceToSeeQ> operator=(const Queue<iceToSeeQ> q) {
 			// copy one value, not all values
-			_values = q.size();
-			_size = _values.size();
-		}	
+			if(q.size() == 0) {
+				return *this;
+			}
+			if(q.size() == 1) {
+				iceToSeeQ values_copy = *q.values;
+				if(size()<2){
+					delete _values;
+				}
+				else{
+					delete [] _values;
+				}
+				_values = new iceToSeeQ(values_copy);
+				_size =1;
+			}
+			else{
+				int values_size = q.size();
+				iceToSeeQ *values_copy = new iceToSeeQ[values_size];
+				for(int i=0; i<values_size; ++i){
+					*(values_copy+i) = *(q._values + i);
+				}
+
+				if(size()<2){
+					delete _values;
+				}
+				else{
+					delete [] _values;
+				}
+
+				_values = new iceToSeeQ[values_size];
+
+				for(int i=0; i<values_size;++i){
+					*(_values+i) = *(values_copy+i);
+				}
+				_size = values_copy;
+				delete [] values_copy;
+			}
+			return *this;
+			}
+			
 
 		template <class U>
 		friend std::ostream &operator<<(std::ostream &out, 
@@ -101,15 +137,30 @@ class Queue {
 };
 template <class U>
 std::ostream &operator<<(std::ostream &out, const Queue<U> &q) {
-	//Implement pls
+	int q_size = queue.size();
+	for(int i=0; i<q_size;++i){
+		out << *(que._values+i) << " ";
+	
+	}
+	return out;
 }
 
 template <class U>
 bool operator==(const Queue<U> &left_queue, const Queue<U> &right_queue) {
-	//Implement me
+	if(left_side.size() != right_side.size()) {
+		return false;
+	}
+	int size = left_side.size();
+	for(int i=0; i<size;++i){
+		if(*(left_side._values+i) != *(right_side.values+i)){
+			return false;
+		}
+	}
+	return true;
 }
 
 template <class U>
 bool operator!=(const Queue<U> &left_queue, const Queue<U> &right_queue) {
-	//You guys are almost done, I believe in you
+	return!=(left_side==right_side);
+
 }
