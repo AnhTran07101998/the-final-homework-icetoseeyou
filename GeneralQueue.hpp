@@ -60,7 +60,7 @@ class Queue {
 
 			//TODO part 2: I am talking about _values.
 		
-		iceToSeeQ push_back(value);	
+		_values.push_back(value);	
 		
 		
 		}

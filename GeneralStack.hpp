@@ -40,9 +40,6 @@ class Stack {
 		//Adding data to the data structure
 	
 		void push(Data value) {
-	//, this part here below 		
-				 
-		//	List<Data> temp =  value; 
 				
 		 // List<Data>::push_front(value);
 
@@ -53,7 +50,6 @@ class Stack {
 			//_values.List<Data>::push_front(value);
 			_values.push_front(value);
 
-			_size = _values.size();
 		}
 
 		//Removing data from the data structure
@@ -63,7 +59,6 @@ class Stack {
 			//top().pop_front();
 			_values.pop_front();
 			
-			_size = _values.size();
 		}
 
 		bool search(Data value) {
