@@ -98,8 +98,8 @@ class Queue {
 			}
 			else{
 				int values_size = q.size();
-				iceToSeeQ *values_copy = new Data[values_size];
-				for(int i=0; i<value_size; ++i){
+				iceToSeeQ *values_copy = new iceToSeeQ[values_size];
+				for(int i=0; i<values_size; ++i){
 					*(values_copy+i) = *(q._values + i);
 				}
 
@@ -118,7 +118,7 @@ class Queue {
 				_size = values_copy;
 				delete [] values_copy;
 			}
-			return *this
+			return *this;
 			}
 			
 
