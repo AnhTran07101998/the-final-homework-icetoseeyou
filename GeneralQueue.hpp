@@ -82,9 +82,45 @@ class Queue {
 
 		Queue<iceToSeeQ> operator=(const Queue<iceToSeeQ> q) {
 			// copy one value, not all values
-			_values = q.size();
-			_size = _values.size();
-		}	
+			if(q.size() == 0) {
+				return *this;
+			}
+			if(q.size() == 1) {
+				iceToSeeQ values_copy = *q.values;
+				if(size()<2){
+					delete _values;
+				}
+				else{
+					delete [] _values;
+				}
+				_values = new iceToSeeQ(values_copy);
+				_size =1;
+			}
+			else{
+				int values_size = q.size();
+				iceToSeeQ *values_copy = new Data[values_size];
+				for(int i=0; i<value_size; ++i){
+					*(values_copy+i) = *(q._values + i);
+				}
+
+				if(size()<2){
+					delete _values;
+				}
+				else{
+					delete [] _values;
+				}
+
+				_values = new iceToSeeQ[values_size];
+
+				for(int i=0; i<values_size;++i){
+					*(_values+i) = *(values_copy+i);
+				}
+				_size = values_copy;
+				delete [] values_copy;
+			}
+			return *this
+			}
+			
 
 		template <class U>
 		friend std::ostream &operator<<(std::ostream &out, 
