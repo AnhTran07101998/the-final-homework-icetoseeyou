@@ -160,7 +160,7 @@ class List {
 			
 		}
 		
-		List &operator=(List &x) {
+		List &operator=(List x) {
 		
 		
 		 	 do {
@@ -169,10 +169,9 @@ class List {
 			}while(!empty());
 			_front=NULL;
 			_back=NULL;
-
-			return *this;
+			reccopy(x._front);
+			return this;
 			
-			 std::cout<<"Hello dawg";
 		}
 
 
