@@ -160,7 +160,39 @@ class List {
 			
 		}
 		
+		
+		bool BinarySearchRecursive(const int *begin,const int *end, int value)
+		{
+		
+			const int *mid;
 
+			mid = begin + (end - begin)/2;
+
+			if (mid == end) {
+			
+				return false;
+			}
+
+			if (*mid > value) {
+			
+			
+				return true;
+			}
+			else if (*mid<value){
+
+				begin = mid +1 ;
+			
+			}
+
+			return BinarySearchRecursive(begin,end,value);
+		
+		
+		
+		}
+		
+		
+		
+		
 		List &operator=(List x) {
 		
 		
