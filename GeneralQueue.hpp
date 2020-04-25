@@ -137,15 +137,30 @@ class Queue {
 };
 template <class U>
 std::ostream &operator<<(std::ostream &out, const Queue<U> &q) {
-	//Implement pls
+	int q_size = queue.size();
+	for(int i=0; i<q_size;++i){
+		out << *(que._values+i) << " ";
+	
+	}
+	return out;
 }
 
 template <class U>
 bool operator==(const Queue<U> &left_queue, const Queue<U> &right_queue) {
-	//Implement me
+	if(left_side.size() != right_side.size()) {
+		return false;
+	}
+	int size = left_side.size();
+	for(int i=0; i<size;++i){
+		if(*(left_side._values+i) != *(right_side.values+i)){
+			return false;
+		}
+	}
+	return true;
 }
 
 template <class U>
 bool operator!=(const Queue<U> &left_queue, const Queue<U> &right_queue) {
-	//You guys are almost done, I believe in you
+	return!=(left_side==right_side);
+
 }
