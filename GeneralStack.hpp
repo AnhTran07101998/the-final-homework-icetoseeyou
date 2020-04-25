@@ -120,7 +120,9 @@ class Stack {
 
 template <class S>
 std::ostream &operator<< (std::ostream &out, const Stack<S> &s) {
-	for(int i = 0; i<s.size();i++){
+	int s_size = s.size();
+
+	for(int i = 0; i<s_size;i++){
 		out<<*(s._values+i)<<" ";
 	}
 	return out;
