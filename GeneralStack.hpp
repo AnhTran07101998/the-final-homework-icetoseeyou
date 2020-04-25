@@ -65,11 +65,12 @@ class Stack {
 		Stack<Data> operator=(const Stack<Data> &s) {
 			//TODO: _values is not a method!
 			_values = s.size(); 
+			_size = _values.size();
 		}
 		
 
 		template <class S>
-		friend std::ostream &operator<<  (std::ostream &out, const Stack<S> &stack);
+		friend std::ostream &operator<< (std::ostream &out, const Stack<S> &s);
 		template <class S>
 		friend bool operator==(const Stack<S> &left_side, const Stack<S> &right_side);
 		template <class S>

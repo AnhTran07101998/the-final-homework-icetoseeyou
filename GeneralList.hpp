@@ -221,7 +221,7 @@ class List {
 
 	template <class D>
 
-	friend std::ostream &operator<<  (std::ostream &os, const List<D> &list);
+	friend std::ostream &operator<<  (std::ostream &os, const List<D> &List);
 
 
 		};
@@ -250,7 +250,7 @@ class List {
 		
 	template <class D>
 
-		std::ostream &operator<< (std::ostream &os, const List<D> &list) {
+		std::ostream &operator<< (std::ostream &os, const List<D> &List) {
 
 			    for(auto *iter = list._front; iter != nullptr; iter = iter->next) {
 
