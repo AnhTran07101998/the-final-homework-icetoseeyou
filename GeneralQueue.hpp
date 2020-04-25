@@ -137,9 +137,9 @@ class Queue {
 };
 template <class U>
 std::ostream &operator<<(std::ostream &out, const Queue<U> &q) {
-	int q_size = queue.size();
+	int q_size = q.size();
 	for(int i=0; i<q_size;++i){
-		out << *(que._values+i) << " ";
+		out << *(q._values+i) << " ";
 	
 	}
 	return out;
