@@ -46,6 +46,7 @@ class Stack {
 		bool search(Data value) {
 		
 		
+			// TODO: Wrong search function, fo binary search you need to assume that the list is sorted
 			return (_values.BinarySearchRecursive(_values.front(),_values.back(),value));
 
 		}
@@ -63,7 +64,7 @@ class Stack {
 
 		//This overloaded operator is empty, please implement
 		Stack<Data> operator=(const Stack<Data> &s) {
-			//TODO: _values is not a method!
+			//TODO: Guys, you gotta copy _values from s (s._values)
 			_values = s.size(); 
 			_size = _values.size();
 		}
@@ -71,12 +72,26 @@ class Stack {
 
 		template <class S>
 		friend std::ostream &operator<< (std::ostream &out, const Stack<S> &s);
+
 		template <class S>
 		friend bool operator==(const Stack<S> &left_side, const Stack<S> &right_side);
+
 		template <class S>
 		friend bool operator!=(const Stack<S> &left_side, const Stack<S> &right_side);
-
-
-
-
 };
+
+template <class S>
+std::ostream &operator<< (std::ostream &out, const Stack<S> &s) {
+	//Implement here
+}
+
+
+template <class S>
+bool operator==(const Stack<S> &left_side, const Stack<S> &right_side) {
+	//Implement here
+}
+
+template <class S>
+bool operator!=(const Stack<S> &left_side, const Stack<S> &right_side) {
+	//Implement here
+}

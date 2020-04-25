@@ -99,3 +99,17 @@ class Queue {
 				const Queue<U> &right_queue);
 
 };
+template <class U>
+std::ostream &operator<<(std::ostream &out, const Queue<U> &q) {
+	//Implement pls
+}
+
+template <class U>
+bool operator==(const Queue<U> &left_queue, const Queue<U> &right_queue) {
+	//Implement me
+}
+
+template <class U>
+bool operator!=(const Queue<U> &left_queue, const Queue<U> &right_queue) {
+	//You guys are almost done, I believe in you
+}
