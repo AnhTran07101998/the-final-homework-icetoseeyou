@@ -161,10 +161,10 @@ class List {
 		}
 		
 		
-		bool BinarySearchRecursive(const int *begin,const int *end, int value)
+		bool BinarySearchRecursive(int begin, int end, int value)
 		{
 		
-			const int *mid;
+			 int mid=0;
 
 			mid = begin + (end - begin)/2;
 
@@ -173,12 +173,12 @@ class List {
 				return false;
 			}
 
-			if (*mid > value) {
+			if (mid > value) {
 			
 			
 				return true;
 			}
-			else if (*mid<value){
+			else if (mid<value){
 
 				begin = mid +1 ;
 			

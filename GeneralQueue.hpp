@@ -72,7 +72,7 @@ class Queue {
 
 		bool search(iceToSeeQ value) {
 		
-			return(_values.BinarySearchRecursive(_values.data(),_values.data()+_values.size(),value));
+			return(_values.BinarySearchRecursive(_values.front(),_values.back(),value));
 		}
 
 
