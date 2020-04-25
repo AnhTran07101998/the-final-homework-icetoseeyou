@@ -64,16 +64,18 @@ class Stack {
 		//This overloaded operator is empty, please implement
 		Stack<Data> operator=(const Stack<Data> &s) {
 			//TODO: _values is not a method!
-			s._values = s.top(); 
-			_size  = _values.size();
+			_values = s.size(); 
 		}
 		
 
 		template <class S>
-		friend std::ostream &operator<<(std::ostream &out, const Stack<S> &stack);
+		friend std::ostream &operator<<  (std::ostream &out, const Stack<S> &stack);
 		template <class S>
 		friend bool operator==(const Stack<S> &left_side, const Stack<S> &right_side);
 		template <class S>
 		friend bool operator!=(const Stack<S> &left_side, const Stack<S> &right_side);
+
+
+
 
 };

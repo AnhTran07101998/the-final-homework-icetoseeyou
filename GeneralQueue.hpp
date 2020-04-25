@@ -82,7 +82,7 @@ class Queue {
 
 		Queue<iceToSeeQ> operator=(const Queue<iceToSeeQ> q) {
 			// copy one value, not all values
-			q._values = q.front();
+			_values = q.size();
 			_size = _values.size();
 		}	
 
@@ -97,4 +97,5 @@ class Queue {
 		template <class U>
 		friend bool operator!=(const Queue<U> &left_queue, 
 				const Queue<U> &right_queue);
+
 };
