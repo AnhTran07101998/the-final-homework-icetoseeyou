@@ -15,7 +15,7 @@ class Stack {
 
 		//Default copy constructor
 		Stack(const Stack &s) {
-	        _values = s._values;
+	        	_values = s._values;
 			_size = _values.size();
 			
 		}
@@ -33,9 +33,6 @@ class Stack {
 	
 		void push(Data value) {
 				
-		 // List<Data>::push_front(value);
-
-	//	List<Data>::List<Data>._values.push_front(value);
 			_values.push_front(value);
 
 		}
@@ -49,9 +46,6 @@ class Stack {
 		bool search(Data value) {
 		
 		
-			//YES this is the methodology you need to use for the
-			// stack and queue classes! JUST CALL METHODS FROM _VALUES
-			
 			return _values.search(value);
 
 		}
@@ -69,7 +63,7 @@ class Stack {
 
 		//This overloaded operator is empty, please implement
 		Stack<Data> operator=(const Stack<Data> &s) {
-			//TODO: _value is not a function, I think you should access _values from s
+			//TODO: _values is not a method!
 			_values = s._values(); 
 			_size  = _values.size();
 		}

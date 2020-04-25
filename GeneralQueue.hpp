@@ -76,20 +76,16 @@ class Queue {
 		}
 
 
-
 		bool empty() const{
-		
-		
+			//TODO: _values.empty() is just enough
 			return(( _values.empty()) && (_size==0));
 		}
 
 		Queue<iceToSeeQ> operator=(const Queue<iceToSeeQ> q) {
-					
-				_values = q.front();
-				_size = _values.size();
+			//TODO: This is wrong, you are just copying one value, not all values
+			_values = q.front();
+			_size = _values.size();
 		}	
-			
-		
 
 		template <class U>
 		friend std::ostream &operator<<(std::ostream &out, 
