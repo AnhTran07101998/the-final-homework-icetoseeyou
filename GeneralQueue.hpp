@@ -77,12 +77,11 @@ class Queue {
 
 
 		bool empty() const{
-			//TODO: _values.empty() is just enough
 			return( _values.empty());
 		}
 
 		Queue<iceToSeeQ> operator=(const Queue<iceToSeeQ> q) {
-			//TODO: This is wrong, you are just copying one value, not all values
+			// copy one value, not all values
 			q._values = q.front();
 			_size = _values.size();
 		}	
