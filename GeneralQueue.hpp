@@ -69,29 +69,21 @@ class Queue {
 		void dequeue(){
 	
 
-			front().pop_front();
+			_values.pop_front();
 	
 	
 		}
 
 		void print(){
 		
+			_values.print();
 			
 
 		}
 
 		bool search(iceToSeeQ value) {
 		
-		
-			for(int i=0; i<size();i++){
-			
-			
-				if (*(_values+i) == value) {
-				
-					return true;
-				}
-			}
-			return false;
+			return(_values.search(value));
 		}
 
 
@@ -99,66 +91,16 @@ class Queue {
 		bool empty() const{
 		
 		
-			return (_values == nullptr) && (_size==0);
+			return(( _values.empty()) && (_size==0));
 		}
 
 		Queue<iceToSeeQ> operator=(const Queue<iceToSeeQ> q) {
-		
-			
-			if(q.size() ==0) {
-				return *this;
-			}
-		
-			if(q.size() ==1) {
-			
-			
-				iceToSeeQ values_copy = *q._values;
-				if(size() <2){
-				
-					delete _values;
-				}
-				else{
-				
-					delete[] _values;
-				}
-				_values = new iceToSeeQ(values_copy);
-				_size = 1;
-			}
-			else{
-		
-				int values_size = q.size();
-				iceToSeeQ *values_copy = new iceToSeeQ[values_size];
-				for (int i = 0;i<values_size;i++){
-				
-					*(values_copy+i) = *(q._values+i);
-
-
-				}
-
-				if (size()<2) {
-				
-					delete _values;
-				}
-				else {
-				
-					delete[] _values;
-				}
-
-				_values = new iceToSeeQ [values_size];
-
-				for(int i=0; i<values_size; i++) {
-					*(_values+i) = *(values_copy+i);
-				}
+					
+				_values = s.front();
 				_size = values_size;
-				delete [] values_copy;
-			}
-			return *this;
+		}	
 			
 		
-		
-		
-		
-		}
 
 		template <class U>
 		friend std::ostream &operator<<(std::ostream &out, 

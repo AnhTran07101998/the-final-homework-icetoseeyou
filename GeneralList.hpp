@@ -172,7 +172,7 @@ class List {
 			_back=NULL;
 			reccopy(x._front);
 
-			return this;
+			return *this;
 			
 		}
 

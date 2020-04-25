@@ -70,7 +70,7 @@ class Stack {
 		//This overloaded operator is empty, please implement
 		Stack<Data> operator=(const Stack<Data> &s) {
 			//TODO: _value is not a function, I think you should access _values from s
-			_values = s._value(); 
+			_values = s.front(); 
 			_size  = _values.size();
 		}
 		
