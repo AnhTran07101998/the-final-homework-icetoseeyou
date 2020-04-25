@@ -160,11 +160,8 @@ class List {
 			
 		}
 		
-<<<<<<< HEAD
+
 		List &operator=(List x) {
-=======
-	        	List &operator=(List &x) {
->>>>>>> 9fd91d3b766570e28451529dc3fe67ca8af732fd
 		
 		
 		 	 do {
@@ -173,11 +170,8 @@ class List {
 			}while(!empty());
 			_front=NULL;
 			_back=NULL;
-<<<<<<< HEAD
 			reccopy(x._front);
-=======
 
->>>>>>> 9fd91d3b766570e28451529dc3fe67ca8af732fd
 			return this;
 			
 		}
