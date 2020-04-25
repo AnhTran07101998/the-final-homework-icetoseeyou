@@ -120,16 +120,36 @@ class Stack {
 
 template <class S>
 std::ostream &operator<< (std::ostream &out, const Stack<S> &s) {
-	//Implement here
+	for(int i = 0; i<s.size();i++){
+		out<<*(s._values+i)<<" ";
+	}
+	return out;
 }
 
 
 template <class S>
 bool operator==(const Stack<S> &left_side, const Stack<S> &right_side) {
-	//Implement here
+
+	if(left_side.size() != right_side.size()){
+			return false;
+	}
+	for(int i=0; i<left_side.size();i++) {
+	
+	
+		if(*(left_side._values+i) !=*(right_side._values+i){
+				
+			return false; 
+
+		}
+	}
+	return true;	
+
 }
+
 
 template <class S>
 bool operator!=(const Stack<S> &left_side, const Stack<S> &right_side) {
-	//Implement here
+
+	return !(left_side==right_side);
+
 }
