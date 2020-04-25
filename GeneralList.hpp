@@ -15,7 +15,7 @@ class List {
 		Dlist *_back;
 
 		void reccopy(const Dlist *ptr) {
-			if(ptr) { // if(ptr != nullptr) {
+			if(ptr) { // if(ptr != nullptr) 
 				reccopy(ptr->next);
 				push_front(ptr->value);
 			}
@@ -36,7 +36,6 @@ class List {
 
 		~List() {
 			while(!empty()) {
-			//while(_size > 0) {
 				pop_front();
 			}
 		}	
@@ -221,10 +220,10 @@ class List {
 
 	template <class D>
 
-	friend std::ostream &operator<<  (std::ostream &os, const List<D> &List);
+	friend std::ostream &operator<</*Here <>*/ (std::ostream &os, const List<D> &List);
 
 
-		};
+			};//not matching not sure why
 
  	template<class D> bool operator==(const List<D> &a, const List <D> &b){
 		
