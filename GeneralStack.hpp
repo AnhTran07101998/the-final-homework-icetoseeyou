@@ -4,36 +4,28 @@
 template <class Data>
 class Stack {
 	private:
-		
 		List<Data> _values;
 		size_t _size;
 		
 	public:
 		//Default constructor
 		Stack(){
-		
 			_size=0;
 		}
-		
-		
 
 		//Default copy constructor
-		//TODO: You do not need the <Data>
 		Stack(const Stack &s) {
-			
 	        _values = s._values;
-		_size = _values.size();
+			_size = _values.size();
 			
 		}
 
 		//Getters
 		Data top() const {
-		
 			return _values.front();
 		}
 
 		size_t size() const {
-		
 			return _size;
 		}
 
@@ -44,19 +36,12 @@ class Stack {
 		 // List<Data>::push_front(value);
 
 	//	List<Data>::List<Data>._values.push_front(value);
-
-
-			//TODO: Guys you are overthing this.
-			//_values.List<Data>::push_front(value);
 			_values.push_front(value);
 
 		}
 
 		//Removing data from the data structure
 		void pop() {
-		
-			//TODO: Again same thing
-			//top().pop_front();
 			_values.pop_front();
 			
 		}
@@ -74,25 +59,19 @@ class Stack {
 
 
 		bool empty() const{
-			
-			return(_values.empty()) &&(_size ==0); 	
+			return (_values.empty()) &&(_size ==0); 	
 		} 
 		
 
 		void print()  {
-		
 			_values.print();
 		}
 
 		//This overloaded operator is empty, please implement
 		Stack<Data> operator=(const Stack<Data> &s) {
-		
+			//TODO: _value is not a function, I think you should access _values from s
 			_values = s._value(); 
 			_size  = _values.size();
-			
-	
-
-
 		}
 		
 
