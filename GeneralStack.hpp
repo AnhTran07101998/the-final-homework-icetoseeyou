@@ -136,7 +136,7 @@ bool operator==(const Stack<S> &left_side, const Stack<S> &right_side) {
 	for(int i=0; i<left_side.size();i++) {
 	
 	
-		if(*(left_side._values+i) !=*(right_side._values+i){
+		if(*(left_side._values+i) !=*(right_side._values+i)){
 				
 			return false; 
 
