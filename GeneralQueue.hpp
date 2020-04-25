@@ -146,7 +146,7 @@ std::ostream &operator<<(std::ostream &out, const Queue<U> &q) {
 }
 
 template <class U>
-bool operator==(const Queue<U> &left_queue, const Queue<U> &right_queue) {
+bool operator==(const Queue<U> &left_side, const Queue<U> &right_side) {
 	if(left_side.size() != right_side.size()) {
 		return false;
 	}
@@ -160,7 +160,7 @@ bool operator==(const Queue<U> &left_queue, const Queue<U> &right_queue) {
 }
 
 template <class U>
-bool operator!=(const Queue<U> &left_queue, const Queue<U> &right_queue) {
-	return!=(left_side==right_side);
+bool operator!=(const Queue<U> &left_side, const Queue<U> &right_side) {
+	return !(left_side==right_side);
 
 }
