@@ -160,13 +160,13 @@ class List {
 		}
 		
 		
-		bool linearSearch(const int *begin, int *end, int value){
+		bool linearSearch(const int begin, int end, int value){
 
 
 			for(auto i=begin;i!=end;++i){
 			
 			
-				if(value==*i) {
+				if(value==i) {
 				
 					return true;
 				}
