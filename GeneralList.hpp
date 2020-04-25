@@ -160,31 +160,17 @@ class List {
 		}
 		
 		
-		bool BinarySearchRecursive(int begin, int end, int value)
-		{
-		
-			 int mid=0;
+		bool linearSearch(const int *begin, int *end, int value){
 
-			mid = begin + (end - begin)/2;
 
-			if (mid == end) {
-			
-				return false;
-			}
-
-			if (mid > value) {
+			for(auto i=begin;i!=end;++i){
 			
 			
-				return true;
-			}
-			else if (mid<value){
-
-				begin = mid +1 ;
-			
-			}
-
-			return BinarySearchRecursive(begin,end,value);
-		
+				if(value==*i) {
+				
+					return true;
+				}
+			}	
 		
 		
 		}
