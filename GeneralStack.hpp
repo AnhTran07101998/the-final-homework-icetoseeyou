@@ -64,10 +64,48 @@ class Stack {
 
 		//This overloaded operator is empty, please implement
 		Stack<Data> operator=(const Stack<Data> &s) {
-			//TODO: Guys, you gotta copy _values from s (s._values)
-			_values = s.size(); 
-			_size = _values.size();
+				
+			if (s.size() == 0) {
+				return *this;
+			}	
+			if(s.size()== 1) {
+			
+				Data values_copy = *s._values;
+				if( s.size() < 2 ) {
+				
+					delete _values;
+				}
+				else {
+					
+					delete [] _values;
+				
+				}
+				_values = new Data(values_copy);
+				_size = 1;
+			}
+			else {
+			
+				int values_size = size ();
+				Data *values_copy = new Data [values_size];
+				for (int i=0; i<values_size;i++){
+					*(values_copy+i)=*(s._values+i);
+			
+			}
+
+			if( s.size < 2 ) {
+			
+				delete _values;
+			
+			}
+			else {
+			
+				delete [] _values;
+			}
+			_size = values_size;
+			delete [] values_copy;
 		}
+		return *this;  
+	}
 		
 
 		template <class S>
