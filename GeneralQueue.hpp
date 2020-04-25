@@ -72,7 +72,7 @@ class Queue {
 
 		bool search(iceToSeeQ value) {
 		
-			return(_values.linearSearch(_values.front(),_values.back(),value));
+			return _values.search(value);
 		}
 
 

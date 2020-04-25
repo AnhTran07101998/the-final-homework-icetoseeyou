@@ -160,18 +160,18 @@ class List {
 		}
 		
 		
-		bool linearSearch(const int begin, int end, int value){
+		bool search(Data search_alue){
 
-
-			for(auto i=begin;i!=end;++i){
+			Dlist *temp;
+			for(temp=_front;temp!=nullptr;temp=temp->next){
 			
-			
-				if(value==i) {
+				if(temp->value == search_alue){
 				
 					return true;
 				}
-			}	
-		
+			}
+			
+			return false;
 		
 		}
 		

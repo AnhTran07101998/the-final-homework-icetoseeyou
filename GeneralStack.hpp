@@ -47,7 +47,7 @@ class Stack {
 		
 		
 			// TODO: Wrong search function, fo binary search you need to assume that the list is sorted
-			return (_values.linearSearch(_values.front(),_values.back(),value));
+			return (_values.search(value));
 
 		}
 		
