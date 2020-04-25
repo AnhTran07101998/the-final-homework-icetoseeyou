@@ -252,7 +252,7 @@ class List {
 
 		std::ostream &operator<< (std::ostream &os, const List<D> &List) {
 
-			    for(auto *iter = list._front; iter != nullptr; iter = iter->next) {
+			    for(auto *iter = List._front; iter != nullptr; iter = iter->next) {
 
 				            os << iter->value << " ";
 
