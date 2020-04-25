@@ -46,14 +46,14 @@ class Stack {
 		bool search(Data value) {
 		
 		
-			return _values.search(value);
+			return (_values.BinarySearchRecursive(_values.front(),_values.back(),value));
 
 		}
 		
 
 
 		bool empty() const{
-			return (_values.empty()) &&(_size ==0); 	
+			return (_values.empty()); 	
 		} 
 		
 
@@ -64,7 +64,7 @@ class Stack {
 		//This overloaded operator is empty, please implement
 		Stack<Data> operator=(const Stack<Data> &s) {
 			//TODO: _values is not a method!
-			_values = s._values(); 
+			s._values = s.top(); 
 			_size  = _values.size();
 		}
 		
