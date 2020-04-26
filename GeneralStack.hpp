@@ -64,48 +64,11 @@ class Stack {
 		//This overloaded operator is empty, please implement
 		Stack<Data> operator=(const Stack<Data> &s) {
 			//TODO: Again, _values is not a pointer, why not just assign s._values to _values?
-				
-			if (s.size() == 0) {
-				return *this;
-			}	
-			if(s.size()== 1) {
 			
-				Data values_copy = *s._values;
-				if( s.size() < 2 ) {
-				
-					delete _values;
-				}
-				else {
-					
-					delete [] _values;
-				
-				}
-				_values = new Data(values_copy);
-				_size = 1;
-			}
-			else {
-			
-				int values_size = size ();
-				Data *values_copy = new Data [values_size];
-				for (int i=0; i<values_size;i++){
-					*(values_copy+i)=*(s._values+i);
-			
-			}
 
-			if( s.size < 2 ) {
-			
-				delete _values;
-			
-			}
-			else {
-			
-				delete [] _values;
-			}
-			_size = values_size;
-			delete [] values_copy;
+			_values=s._values;
+
 		}
-		return *this;  
-	}
 		
 
 		template <class S>
@@ -120,15 +83,10 @@ class Stack {
 
 template <class S>
 std::ostream &operator<< (std::ostream &out, const Stack<S> &s) {
-	int s_size = s.size();
-
-	for(int i = 0; i<s_size;i++){
 		//TODO: s._values is not a pointer, it is a list class. 
 		// I sent an email about updating GeneralList.hpp to overload the << operator.
 		// You can just say 'os << s._values;'
-		out<<*(s._values+i)<<" ";
-	}
-	return out;
+		out<<s._values;
 }
 
 
@@ -137,19 +95,13 @@ bool operator==(const Stack<S> &left_side, const Stack<S> &right_side) {
 	//TODO: guys, why not just compare left_side._values and right_side._values? The operator is implemented in
 	// GeneralList.hpp
 
-	if(left_side.size() != right_side.size()){
-			return false;
-	}
-	for(int i=0; i<left_side.size();i++) {
-	
-	
-		if(*(left_side._values+i) !=*(right_side._values+i)){
-				
+	if(left_side._values != right_side._values){
 			return false; 
-
-		}
 	}
-	return true;	
+	else {
+	
+		return true;
+	}	
 
 }
 
@@ -157,6 +109,6 @@ bool operator==(const Stack<S> &left_side, const Stack<S> &right_side) {
 template <class S>
 bool operator!=(const Stack<S> &left_side, const Stack<S> &right_side) {
 
-	return !(left_side==right_side);
+	return !(left_side._values==right_side._values);
 
 }

@@ -82,44 +82,9 @@ class Queue {
 
 		Queue<iceToSeeQ> operator=(const Queue<iceToSeeQ> q) {
 			// copy one value, not all values
-			if(q.size() == 0) {
-				return *this;
-			}
-			if(q.size() == 1) {
-				iceToSeeQ values_copy = *q.values;
-				if(size()<2){
-					delete _values;
-				}
-				else{
-					delete [] _values;
-				}
-				_values = new iceToSeeQ(values_copy);
-				_size =1;
-			}
-			else{
-				int values_size = q.size();
-				iceToSeeQ *values_copy = new iceToSeeQ[values_size];
-				for(int i=0; i<values_size; ++i){
-					*(values_copy+i) = *(q._values + i);
-				}
+				_values=q._values;
 
-				if(size()<2){
-					delete _values;
-				}
-				else{
-					delete [] _values;
-				}
-
-				_values = new iceToSeeQ[values_size];
-
-				for(int i=0; i<values_size;++i){
-					*(_values+i) = *(values_copy+i);
-				}
-				_size = values_copy;
-				delete [] values_copy;
-			}
-			return *this;
-			}
+		}
 			
 
 		template <class U>
@@ -137,26 +102,18 @@ class Queue {
 };
 template <class U>
 std::ostream &operator<<(std::ostream &out, const Queue<U> &q) {
-	int q_size = q.size();
-	for(int i=0; i<q_size;++i){
-		out << *(q._values+i) << " ";
+		out << q._values;
 	
-	}
-	return out;
 }
 
 template <class U>
 bool operator==(const Queue<U> &left_side, const Queue<U> &right_side) {
-	if(left_side.size() != right_side.size()) {
+	if(left_side._values != right_side._values) {
 		return false;
 	}
-	int size = left_side.size();
-	for(int i=0; i<size;++i){
-		if(*(left_side._values+i) != *(right_side.values+i)){
-			return false;
-		}
-	}
+	else {
 	return true;
+	}
 }
 
 template <class U>
