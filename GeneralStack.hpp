@@ -10,22 +10,26 @@ class Stack {
 	public:
 		//Default constructor
 		Stack(){
+		
 			_size=0;
 		}
 
 		//Default copy constructor
 		Stack(const Stack &s) {
-	        	_values = s._values;
+	        
+			_values = s._values;
 			_size = _values.size();
 			
 		}
 
 		//Getters
 		Data top() const {
+		
 			return _values.front();
 		}
 
 		size_t size() const {
+		
 			return _size;
 		}
 
@@ -39,6 +43,7 @@ class Stack {
 
 		//Removing data from the data structure
 		void pop() {
+		
 			_values.pop_front();
 			
 		}
@@ -49,8 +54,6 @@ class Stack {
 			return (_values.search(value));
 
 		}
-		
-
 
 		bool empty() const{
 			return (_values.empty()); 	
@@ -58,22 +61,16 @@ class Stack {
 		
 
 		void print()  {
+		
 			_values.print();
 		}
 
 		//This overloaded operator is empty, please implement
 		Stack<Data> &operator=(const Stack<Data> &s) {
-			//TODO: Again, _values is not a pointer, why not just assign s._values to _values?
-			// we tried something like this before, not sure how else we can assign it?
-			// s.values=_values?		 
-			
-		//	_values = static_cast<Data>(s._values);
-
-			auto _values=s._values;
+		
+			Data _values=s._values();
 			_size=_values.size();
 			return *this;
-			
-
 		}
 		
 
@@ -89,20 +86,17 @@ class Stack {
 
 template <class S>
 std::ostream &operator<< (std::ostream &out, const Stack<S> &s) {
-		//TODO: s._values is not a pointer, it is a list class. 
-		// I sent an email about updating GeneralList.hpp to overload the << operator.
-		// You can just say 'os << s._values;'
-		out<<s._values;
+	
+	out<<s._values;
 }
 
 
 template <class S>
 bool operator==(const Stack<S> &left_side, const Stack<S> &right_side) {
-	//TODO: guys, why not just compare left_side._values and right_side._values? The operator is implemented in
-	// GeneralList.hpp
 
 	if(left_side._values != right_side._values){
-			return false; 
+		
+		return false; 
 	}
 	else {
 	
@@ -110,8 +104,6 @@ bool operator==(const Stack<S> &left_side, const Stack<S> &right_side) {
 	}	
 
 }
-
-
 template <class S>
 bool operator!=(const Stack<S> &left_side, const Stack<S> &right_side) {
 

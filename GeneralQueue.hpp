@@ -22,32 +22,26 @@ class Queue {
 			_size = _values.size();
 
 		}
-
-
-
 		//Getters
 		size_t size() const{
-		
 		
 			return _size;
 		}
 
+
 		iceToSeeQ front() const{
 		
-		
-			//This should look similar to the back() method
 			return _values.front();
 		}
 
+
 		iceToSeeQ back() const{
 		
-		
-			//Correct!
 			return _values.back();
 		}
 
+
 		void enqueue(iceToSeeQ value) {
-		
 		
 			_values.push_back(value);	
 		
@@ -56,7 +50,6 @@ class Queue {
 
 		//Pop from queue
 		void dequeue(){
-	
 
 			_values.pop_front();
 	
@@ -66,7 +59,6 @@ class Queue {
 		void print(){
 		
 			_values.print();
-			
 
 		}
 
@@ -80,8 +72,8 @@ class Queue {
 			return( _values.empty());
 		}
 
-		Queue<iceToSeeQ> operator=(const Queue<iceToSeeQ> q) {
-			// copy one value, not all values
+		Queue<iceToSeeQ> &operator=(const Queue<iceToSeeQ> q) {
+			
 				_values=q._values;
 				_size=_values.size();
 				return *this;
