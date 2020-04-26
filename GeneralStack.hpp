@@ -67,9 +67,9 @@ class Stack {
 			// we tried something like this before, not sure how else we can assign it?
 			// s.values=_values?		 
 			
-			_values = static_cast<Data>(s._values);
+		//	_values = static_cast<Data>(s._values);
 
-		//	_values=s._values;
+			auto _values=s._values;
 			_size=_values.size();
 			return *this;
 			
