@@ -62,13 +62,14 @@ class Stack {
 		}
 
 		//This overloaded operator is empty, please implement
-		Stack<Data> operator=(const Stack<Data> &s) {
+		Stack<Data> &operator=(const Stack<Data> &s) {
 			//TODO: Again, _values is not a pointer, why not just assign s._values to _values?
 			// we tried something like this before, not sure how else we can assign it?
 			// s.values=_values?		 
 			
+			_values = static_cast<Data>(s._values);
 
-			_values=s._values;
+		//	_values=s._values;
 			_size=_values.size();
 			return *this;
 			
