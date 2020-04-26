@@ -83,6 +83,8 @@ class Queue {
 		Queue<iceToSeeQ> operator=(const Queue<iceToSeeQ> q) {
 			// copy one value, not all values
 				_values=q._values;
+				_size=_values.size();
+				return *this;
 		}
 			
 

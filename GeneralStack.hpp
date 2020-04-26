@@ -70,7 +70,7 @@ class Stack {
 
 			s._values=_values;
 			_size=_values.size();
-			return this;
+			return *this;
 			
 
 		}

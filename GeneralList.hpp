@@ -180,7 +180,6 @@ class List {
 		
 		List &operator=(List x) {
 		
-		
 		 	 do {
 				pop_front();
 
@@ -209,7 +208,7 @@ class List {
 	friend std::ostream &operator<</*Here <>*/ (std::ostream &os, const List<D> &List);
 
 
-			};//not matching not sure why
+			};
 
  	template<class D> bool operator==(const List<D> &a, const List <D> &b){
 		
