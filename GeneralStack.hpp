@@ -46,7 +46,6 @@ class Stack {
 		bool search(Data value) {
 		
 		
-			// TODO: Wrong search function, fo binary search you need to assume that the list is sorted
 			return (_values.search(value));
 
 		}
@@ -64,6 +63,7 @@ class Stack {
 
 		//This overloaded operator is empty, please implement
 		Stack<Data> operator=(const Stack<Data> &s) {
+			//TODO: Again, _values is not a pointer, why not just assign s._values to _values?
 				
 			if (s.size() == 0) {
 				return *this;
@@ -123,6 +123,9 @@ std::ostream &operator<< (std::ostream &out, const Stack<S> &s) {
 	int s_size = s.size();
 
 	for(int i = 0; i<s_size;i++){
+		//TODO: s._values is not a pointer, it is a list class. 
+		// I sent an email about updating GeneralList.hpp to overload the << operator.
+		// You can just say 'os << s._values;'
 		out<<*(s._values+i)<<" ";
 	}
 	return out;
@@ -131,6 +134,8 @@ std::ostream &operator<< (std::ostream &out, const Stack<S> &s) {
 
 template <class S>
 bool operator==(const Stack<S> &left_side, const Stack<S> &right_side) {
+	//TODO: guys, why not just compare left_side._values and right_side._values? The operator is implemented in
+	// GeneralList.hpp
 
 	if(left_side.size() != right_side.size()){
 			return false;
