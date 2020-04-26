@@ -65,10 +65,10 @@ class Stack {
 		Stack<Data> operator=(const Stack<Data> &s) {
 			//TODO: Again, _values is not a pointer, why not just assign s._values to _values?
 			// we tried something like this before, not sure how else we can assign it?
-			// _values=s.values?		 
+			// s.values=_values?		 
 			
 
-			s._values=_values;
+			_values=s._values;
 			_size=_values.size();
 			return *this;
 			
